@@ -10,6 +10,9 @@ URL:		http://openclonk.org/
 Source:		http://hg.openclonk.org/openclonk/archive/%{name}-release-%{version}-src.tar.gz
 Patch0:		openclonk-release-5.3.3-tinyxml.patch
 Patch1:		openclonk-release-5.3.3-path.patch
+BuildRequires:	cmake
+BuildRequires:	imagemagick
+BuildRequires:	boost-devel
 BuildRequires:	jpeg-devel
 BuildRequires:	tinyxml-devel
 BuildRequires:	pkgconfig(freetype2)
