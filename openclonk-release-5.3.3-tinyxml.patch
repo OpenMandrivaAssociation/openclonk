@@ -1,0 +1,43 @@
+diff -urN openclonk-release-5.3.3-src/CMakeLists.txt openclonk-release-5.3.3-src-patched/CMakeLists.txt
+--- openclonk-release-5.3.3-src/CMakeLists.txt	2013-03-09 23:24:05.000000000 +1100
++++ openclonk-release-5.3.3-src-patched/CMakeLists.txt	2013-03-13 17:20:41.200065564 +1100
+@@ -773,6 +773,8 @@
+ 	endif()
+ endif()
+ 
++FIND_LIBRARY( TINYXML_LIBRARY NAMES tinyxml )
++
+ ############################################################################
+ # Locate necessary libraries
+ ############################################################################
+@@ -1005,6 +1007,7 @@
+ 	${OGG_LIBRARY}
+ 	${OPENAL_LIBRARY}
+ 	${ALUT_LIBRARY}
++	${TINYXML_LIBRARY}
+ )
+ target_link_libraries(c4group
+ 	${ZLIB_LIBRARIES}
+@@ -1180,10 +1183,6 @@
+ 
+ CHECK_INCLUDE_FILE_CXX(getopt.h HAVE_GETOPT_H)
+ 
+-# TinyXML
+-add_subdirectory(thirdparty/tinyxml)
+-target_link_libraries(clonk tinyxml)
+-
+ if(WIN32)
+ 	find_package(DbgHelp)
+ 	if(DBGHELP_FOUND)
+diff -urN openclonk-release-5.3.3-src/src/lib/StdMeshLoaderXml.cpp openclonk-release-5.3.3-src-patched/src/lib/StdMeshLoaderXml.cpp
+--- openclonk-release-5.3.3-src/src/lib/StdMeshLoaderXml.cpp	2013-03-13 17:35:01.605745133 +1100
++++ openclonk-release-5.3.3-src-patched/src/lib/StdMeshLoaderXml.cpp	2013-03-13 17:32:35.000000000 +1100
+@@ -22,7 +22,7 @@
+ #include "C4Include.h"
+ #include "StdMesh.h"
+ #include "StdMeshLoader.h"
+-#include <tinyxml/tinyxml.h>
++#include <tinyxml.h>
+ 
+ // Helper class to load things from an XML file with error checking
+ class StdMeshLoader::StdMeshXML
