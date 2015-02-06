@@ -2,7 +2,7 @@
 
 Name:		openclonk
 Version:	5.3.3
-Release:	2
+Release:	3
 Summary:	Free multiplayer action game about mining, settling and fast-paced melees
 Group:		Games/Arcade
 License:	BSD
