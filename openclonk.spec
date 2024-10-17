@@ -6,7 +6,7 @@ Release:	3
 Summary:	Free multiplayer action game about mining, settling and fast-paced melees
 Group:		Games/Arcade
 License:	BSD
-URL:		http://openclonk.org/
+URL:		https://openclonk.org/
 Source:		http://hg.openclonk.org/openclonk/archive/%{name}-release-%{version}-src.tar.gz
 Patch0:		openclonk-release-5.3.3-tinyxml.patch
 Patch1:		openclonk-release-5.3.3-path.patch
